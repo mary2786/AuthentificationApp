@@ -2,11 +2,11 @@ require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose');
-const app = express();
+
 const PORT = process.env.PORT;
 const verify = require('./middlewares/verifyToken');
 const cors = require('cors')
-
+const app = express();
 app.use(cors())
 
 mongoose.connect(process.env.MONGOURL, {useNewUrlParser: true}, (err) => {
